@@ -6,7 +6,14 @@ membuat sebuah folder kosong dengan nama-mu sendiri
 
 ### Penyelesaian
 menggunakan mkdir untuk membuat sebuah folder ```mkdir Batian ```
+
 ![1](https://user-images.githubusercontent.com/63898506/133056381-6ac8d46d-1a35-40ed-9ce8-bb315e00eff0.PNG)
+
+# Penjelasan
+pada folder tersebut membuat folder lagi dengan nama ```sekolah``` dan ```kerja```, pertama masuk kedalam folder nama setelah itu sama seperti yang nomor 1 masih menggunakan mkdir
+
+### Penyelesaian
+menggunakan mkdir untuk membuat folder yang dipisah dengan spasi, setelah itu di tampilkan dengan ls
 
 ![2](https://user-images.githubusercontent.com/63898506/133056789-b98b5b6b-5750-4721-ac85-06f5b88676e6.PNG)
 
