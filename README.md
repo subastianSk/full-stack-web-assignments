@@ -1,10 +1,10 @@
-#01-Unix-Command-Line
+# 01-Unix-Command-Line
 ## EXPECTED RESULT
 
 # Penjelasan
 membuat sebuah folder kosong dengan nama-mu sendiri
 
-#Penyelesaian
+### Penyelesaian
 menggunakan mkdir untuk membuat sebuah folder ```mkdir Batian ```
 ![1](https://user-images.githubusercontent.com/63898506/133056381-6ac8d46d-1a35-40ed-9ce8-bb315e00eff0.PNG)
 
