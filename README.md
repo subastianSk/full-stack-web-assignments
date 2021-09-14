@@ -1,7 +1,6 @@
 # 01-Unix-Command-Line
-## EXPECTED RESULT
 
-
+### EXPECTED RESULT
 # Penjelasan Soal 1
 1. membuat sebuah folder kosong dengan nama-mu sendiri
 ```
