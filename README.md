@@ -1,4 +1,7 @@
 # 01-Unix-Command-Line
+### Dwi Yanto Subastian
+### Group 4
+### Challenge Patner Greenpeace
 
 ### EXPECTED RESULT
 # Penjelasan Soal 1
