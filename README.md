@@ -41,6 +41,7 @@ menggunakan mkdir untuk membuat folder yang dipisah dengan spasi, setelah itu di
   `cd sekolah`
   
   lalu membuat file bernama `ijazah.txt` dengan `touch` dan mengisinya setelah itu di tampilkan dengan command `cat`.
+  
 ![3](https://user-images.githubusercontent.com/63898506/133057141-5e3c3d49-3fa4-4738-843f-df6bbd8db6a2.PNG)
 
 ![4](https://user-images.githubusercontent.com/63898506/133057423-43fa5868-660b-4015-bd2c-e7b625d6db08.PNG)
@@ -56,6 +57,7 @@ menggunakan mkdir untuk membuat folder yang dipisah dengan spasi, setelah itu di
 
 ### Penyelesaian
 menggunakan command `cd` ditambahkan dengan `..` untuk menuju parent folder
+
 ![8](https://user-images.githubusercontent.com/63898506/133058675-ca94f015-4a9f-47e0-b670-ba416604fa2b.PNG)
 
 
@@ -64,6 +66,7 @@ menggunakan command `cd` ditambahkan dengan `..` untuk menuju parent folder
 
 ### Penyelesaian
 lalu membuat file bernama `cv.txt` dengan touch dan mengisinya setelah itu di tampilkan dengan command `cat`.
+
 ![9](https://user-images.githubusercontent.com/63898506/133058824-ff54b37f-07e5-4d17-a458-c7b2b1ae2808.PNG)
 
 ![10](https://user-images.githubusercontent.com/63898506/133059247-e5174e50-2a19-4e1c-bea4-e1e2d334685a.PNG)
@@ -75,6 +78,7 @@ lalu membuat file bernama `cv.txt` dengan touch dan mengisinya setelah itu di ta
 
 ### Penyelesaian
 menggunakan cara dengan megetikan `mv`
+
 ![11](https://user-images.githubusercontent.com/63898506/133059484-d30f629f-b3f4-489a-bb61-8df3c51fa35f.PNG)
 
 
