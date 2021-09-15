@@ -1,0 +1,17 @@
+nav {
+    background-color: lightskyblue;
+}
+
+nav a {
+    /* Dibandingkan dengan display: inline, perbedaan utama adalah display: inline-blockmemungkinkan untuk mengatur lebar dan tinggi pada elemen.*/
+    display: inline-block;
+    font-weight: 400;
+    color: black;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: gainsboro;
+}
