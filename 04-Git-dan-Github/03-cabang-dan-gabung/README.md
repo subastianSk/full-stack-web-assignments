@@ -1,6 +1,7 @@
 #03-branch-and-merge
 
 1.What does `git clean` do?
+<br>
 git clean adalah perintah bawaan untuk membersihkan file yang tidak terlacak. Hati-hati dengan yang ini, ini menghapus file secara permanen!
 
 2.What do the `-d` and `-f` flags for git clean do?
