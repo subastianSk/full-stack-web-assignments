@@ -1,0 +1,10 @@
+git clone https://github.com/subastianSk/tech4impact-students-bio.git
+git branch suabstian
+git checkout subastian
+touch subastian.md
+printf("Nama Lengkap: Dwi aynto Subastian\nUmur: 21\nQoutes : Jangan Menyerah walapun sulit, Tetap nikmatin Proses\n") > subastian.md
+git add subastian.md
+git commit -m "suabstian.md"
+git checkout master
+git merge suabstian
+git push
