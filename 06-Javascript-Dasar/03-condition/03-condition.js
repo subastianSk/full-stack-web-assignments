@@ -10,15 +10,19 @@
 
 const userAge = 18;
 const drivingLicense = true;
-if (userAge === 'IYA') {
+if (userAge <= 17) {
     console.log("Anda belum cukup umur");
-} else if (userAge === 'Tidak') {
-    if (userAge === drivingLicense) {
+} else if (userAge == 18) {
+    if (userAge > drivingLicense) {
         console.log("Selamat berkendara");
     }else{
         console.log("Diharapkan untuk membuat SIM terlebih dahulu");
     }
 }
+
+
+
+
 /// EDIT HERE
 
 
@@ -31,16 +35,18 @@ if (userAge === 'IYA') {
 /// - konversi celcius menjadi celcius apabila user memasukan unit berupa "C"
 /// - menampilkan pesan "Maaf anda salah input", apabila variable tidak memenuhi semua kondisi yang ada
 const temperature = 100; /// suhu
-const unit = "F"; /// inputan
+const unit = "K"; /// inputan
 switch (unit) {
-    case "K":
-        console.log("");
+    case "F":
+        hasil=(temperature * 9/5) + 32
+        console.log(hasil);
         break;
-        case "F":
-        console.log("");
+        case "K":
+        hasil=(temperature + 273.15)
+        console.log(hasil);
         break;
         case "C":
-        console.log("");
+        console.log(temperature);
         break;
         default:
             console.log("Maaf anda salah input");

@@ -2,15 +2,15 @@
 /// Dibawah ini akan ditampilkan daftar pengeluaran bulan ini beserta gaji yang akan diterima, tugas-mu adalah untuk menghitung gaji yang tersisa
 
 ///Pegeluaran
-const gundam = 750000
-const makan = 2000000
-const kost = 1000000
-const subscription = 250000
+const gundam = 750000;
+const makan = 2000000;
+const kost = 1000000;
+const subscription = 250000;
 
-Gaji
-const gajiPokok = 5000000
-const gajiBonus = 0,1 * gajiPokok;
-const gajiLembur = 0,05 gajiPokok;
+//Gaji
+const gajiPokok = 5000000;
+const gajiBonus = gajiPokok * 0.1;
+const gajiLembur = gajiPokok * 0.05;
 
 /// Sisa Gaji
 const totalGaji = gajiPokok + gajiBonus + gajiLembur;
