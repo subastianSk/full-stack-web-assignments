@@ -9,8 +9,8 @@ console.log(upperCase);
 
 /// Soal - 02
 /// Gunakan built-in function yang dimiliki oleh Javascript, agar kita mengetahui apa tipe data yang dimiliki oleh variable age
-const ageInDays = (typeof age);
-console.log(ageInDays);
+const typeOfAge = age;
+console.log(typeof typeOfAge)
 
 
 /// Soal - 03

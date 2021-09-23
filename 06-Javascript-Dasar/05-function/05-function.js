@@ -10,39 +10,38 @@
 ///   lebih dari Rp 5.000.000, apabila kurang maka ia dibebaskan dari pajak atau bernilai 0
 
 /// EDIT HERE
-// function taxCalc(salry) {
-//     if (salry <= 5000000) {
-//         console.log(salry*100/10);
-//     }else{
-//         console.log(salry);
-//     }
-// }
-// console.log((taxCalc(1000)));
+function taxCalc(salry) {
+    if (salry <= 5000000) {
+        return salry*100/10;
+    }
+    return salry;
+}
+console.log((taxCalc(1000)));
 
 /// Soal - 02
 /// BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung BMI seseorang dengan detail sebagai berikut:
 
 /// Parameter
-/// - (Number) `height` ⇒ tinggi seseorang (kg)
-/// - (Number) `weight` ⇒ berat badan seseorang (cm) 
+// / - (Number) `height` ⇒ tinggi seseorang (kg)
+// / - (Number) `weight` ⇒ berat badan seseorang (cm) 
 
-/// Return Value
-/// - (Number) hasil kalkulasi menggunakan formula BMI
-///   height / weight^2 * 10000
+// / Return Value
+// / - (Number) hasil kalkulasi menggunakan formula BMI
+// /   height / weight^2 * 10000
 
 /// EDIT HERE
-// function BMI(weight, height) {
-//     let index = (weight/height**2)
-//     if(index <= 18.5){
-//       console.log("Underweight");
-//     }else if(index <= 25.0){
-//       console.log("normal");
-//     }else if(index <= 30.0){
-//       console.log("Overweight");
-//     }
-//       return index;
-//     }
-// console.log(BMI(170, 65));
+function BMI(weight, height) {
+    let index = (weight/height**2)
+    if(index <= 18.5){
+      console.log("Underweight");
+    }else if(index <= 25.0){
+      console.log("normal");
+    }else if(index <= 30.0){
+      console.log("Overweight");
+    }
+      return index;
+    }
+console.log(BMI(170, 65));
 
 /// Soal - 03
 /// Buatlah sebuah fungsi yang akan merubah huruf pertama disetiap kata menjadi huruf besar
@@ -54,10 +53,10 @@
 /// - (String) kalimat yang sudah kita ubah huruf pertamanya menjadi huruf besar
 
 /// EDIT HERE
-// function convToUpperCase(text) {
-//     console.log (text.toUpperCase());
-// }
-// console.log(convToUpperCase("subastian"));
+function convToUpperCase(text) {
+    return text.toUpperCase();
+}
+console.log(convToUpperCase("subastian"));
 
 
 /// Soal - 04
@@ -72,6 +71,28 @@
 /// - jika tidak kita bisa mengembalikan string kosong
 
 /// EDIT HERE
-function nonRepeatChar(word) {
-
+function firstNonRepeatedChar(str) { 
+    let data = [];
+    if(str.includes(" ")){
+        return "kata tidak boleh dipisah";
+    }
+    for(let i = 0; i<str.length ; i++){
+        if(str[i] == " "){
+            return "kata tidak boleh dipisah";;
+        }
+        if(!data[str[i]]){
+            data[str[i]] = 1;
+        }
+        else{
+            data[str[i]]++;
+        }
+    }
+    for(let i = 0; i<str.length; i++){
+        if(data[str[i]]==1){
+            return str[i];
+        }
+    }
+    return "";
 }
+
+console.log(firstNonRepeatedChar("alloha"));

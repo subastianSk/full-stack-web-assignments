@@ -1,7 +1,9 @@
 /// Soal - 01
-/// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah ini
-/// - apa yang akan tampil didalam comsole.log ?
-/// - apa alasan yang menyebabkan hasil dari console itu bukan nilai dari variable name?
+/// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah ini? Hasilnya Mariah
+/// - apa yang akan tampil didalam console.log ? Tampilannya Mariah
+/// - apa alasan yang menyebabkan hasil dari console itu bukan nilai dari variable name? karena yang
+/// yang bakal di eksekusi terlebih dahulu adalah name dari lokal dulu jika lokal ada isinya maka tidak
+/// melihat lagi variable global
 
 /// WRITE YOUR ANALYSIS HERE
 ///
@@ -23,8 +25,9 @@ console.log(printFirstName("Mariah Carey"));
 
 /// WRITE YOUR ANALYSIS HERE
 
-console.log(salaryWithVar);
-console.log(salaryWithConst);
+//alasanya adalah dimana mengecek terlebih dahulu variable lokalnya otomatis salaryWithVar yang outputnya undifine
+console.log(salaryWithVar);// bisa berjalan karena merupakan variable lokal
+console.log(salaryWithConst);// ini variable global
 
 var salaryWithVar = 15000000;
 const salaryWithConst = 15000000;

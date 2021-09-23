@@ -24,51 +24,42 @@ for (let i=2; i<=100; i++) {
 /// Soal - 02
 /// Kamu diminta untuk menemukan bilangan prima ke-50, temukan bilangan tersebut menggunakan while loop
 
-let primeCounter = 50;
-let interation2 = 2;
-const fiftiethPrime=0;
+let primeCounter = 0;
+let fiftiethPrime = 1;
 
 /// EDIT HERE
-while (fiftiethPrime < primeCounter) {
-    let isPrime = true;
+function isPrime(n){
 
-    if (interation2 != 2 && interation2 % 2 === 0 ) {
-        let isPrime = false;
-        interation2++;
-        continue;
-    }
-
-    for (let j = 2; j < interation2;  j++){
-        if (interation2 % j === 0) {
-            isPrime = false;
-            break;
+    for(let k = 2; k <= Math.sqrt(n); k++){
+        if(n%k == 0){
+            return false;
         }
     }
-        if (isPrime) {
-            fiftiethPrime++;
-            interation2 = interation2;
-        }
-        interation2++;
+
+    return true;
 }
 
+while (primeCounter < 50) {
+    fiftiethPrime++;
+
+    if(isPrime(fiftiethPrime))
+        primeCounter++;
+}
+console.log(fiftiethPrime);
 
 /// Soal - 03
 /// Kamu diminta untuk menemukan bilangan ganjil ke-50, temukan bilangan tersebut menggunakan do while loop
 
-let oddCounter = 50;
-const fiftiethOdd=1;
+let oddCounter = 0;
+let fiftiethOdd = 0;
 
-let i = 1;
-let addCounter = 0;
-
+/// EDIT HERE
 do {
-  const isOdd = i % 2;
-  if (isOdd) {
-      addCounter++;
-      fiftiethOdd = i; 
-  }
-  i++;
-} while (addCounter < oddCounter);
+    fiftiethOdd++;
+    if(fiftiethOdd % 2)
+        oddCounter++;
+
+} while (oddCounter < 50);
 
 console.log(fiftiethOdd);
 
