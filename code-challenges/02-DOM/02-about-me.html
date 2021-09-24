@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>About Me</title>
+  <style>
+    .warna {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Me</h1>
+  
+  <ul>
+    <li>Nickname: <span id="nickname"></span>
+    <li>Age:  <span id="age"></span>
+    <li>Hometown: <span id="hometown"></span>
+   </ul>
+  
+  <script>
+   document.body.style.fontFamily = 'Arial, sans-serif';
+   document.getElementById('nickname').innerHTML = 'Dwi Yanto Subastian';
+   document.getElementById('age').innerHTML = '21';
+   document.getElementById('hometown').innerHTML = 'Purwakarta, BDG';
+   var items = document.getElementsByTagName('li');
+   for (var i = 0; i < items.length; i++) {
+      items[i].className = 'warna';
+   }
+    
+    var gambar = document.createElement('img');
+    gambar.src = 'https://media.suara.com/pictures/653x366/2021/08/24/82576-park-seo-joon-soompi.jpg';
+    document.body.appendChild(gambar);
+  </script>
+</body>
+</html>
