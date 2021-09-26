@@ -6,7 +6,18 @@
 /// melihat lagi variable global
 
 /// WRITE YOUR ANALYSIS HERE
-///
+/*
+ada 3 scope
+    Block scope
+        Variables declared inside a { } blok tidak dapat diakses dari luar blok: Lingkup fungsi
+    Function scope
+        Variabel yang didefinisikan di dalam suatu fungsi tidak dapat diakses (terlihat) dari luar fungsi.
+    Global scope
+        Variabel yang dideklarasikan di luar fungsi, menjadi GLOBAL.
+
+https://www.w3schools.com/js/js_scope.asp
+*/
+
 const name = "John Watson";
 
 function printFirstName(name) {
@@ -14,21 +25,3 @@ function printFirstName(name) {
 }
 
 console.log(printFirstName("Mariah Carey"));
-
-
-/// Soal - 02
-/// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah ini
-/// - apa yang akan terjadi apabila kita mencoba menjalankan baris kode dibawah?
-/// - apa alasan kenapa hal tersebut bisa terjadi?
-///   - dari segi salaryWithVar
-///   - dari segi salaryWithConst
-
-/// WRITE YOUR ANALYSIS HERE
-
-//alasanya adalah dimana mengecek terlebih dahulu variable lokalnya otomatis salaryWithVar yang outputnya undifine
-console.log(salaryWithVar);// bisa berjalan karena merupakan variable lokal
-console.log(salaryWithConst);// ini variable global
-
-var salaryWithVar = 15000000;
-const salaryWithConst = 15000000;
-

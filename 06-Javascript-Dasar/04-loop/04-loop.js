@@ -6,18 +6,16 @@ for (let i=2; i<=100; i++) {
 
     if (i != 2 && i % 2 === 0 ) {
         let isPrime = false;
-        continue;
     }
 
-    for (let j = 2; j < i;  j++){
+    for (let j = 2; j <= Math.sqrt(i);  j++){
         if (i % j === 0) {
             isPrime = false;
-            break;
         }
     }
-        if (isPrime) {
-            console.log(i);
-        }
+    if(isPrime){
+        process.stdout.write(i + " ");
+    }
 }
  
 

@@ -102,3 +102,5 @@ function firstNonRepeatedChar(str) {
 }
 
 console.log(firstNonRepeatedChar("alloha"));
+console.log(firstNonRepeatedChar("hello world"));
+console.log(firstNonRepeatedChar("wooohoowh"));
