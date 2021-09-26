@@ -14,14 +14,13 @@ for (let i=2; i<=100; i++) {
         }
     }
     if(isPrime){
-        process.stdout.write(i + " ");
+        process.stdout.write(i + ",");
     }
 }
  
 
 /// Soal - 02
 /// Kamu diminta untuk menemukan bilangan prima ke-50, temukan bilangan tersebut menggunakan while loop
-
 let primeCounter = 0;
 let fiftiethPrime = 1;
 
