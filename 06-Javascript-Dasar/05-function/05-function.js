@@ -19,29 +19,35 @@ function taxCalc(salry) {
 console.log((taxCalc(1000)));
 
 /// Soal - 02
-/// BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung BMI seseorang dengan detail sebagai berikut:
+/// $BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung $BMI seseorang dengan detail sebagai berikut:
 
 /// Parameter
 // / - (Number) `height` ⇒ tinggi seseorang (kg)
 // / - (Number) `weight` ⇒ berat badan seseorang (cm) 
 
 // / Return Value
-// / - (Number) hasil kalkulasi menggunakan formula BMI
+// / - (Number) hasil kalkulasi menggunakan formula $BMI
 // /   height / weight^2 * 10000
 
 /// EDIT HERE
-function BMI(weight, height) {
-    let index = (weight/height**2)
-    if(index <= 18.5){
-      console.log("Underweight");
-    }else if(index <= 25.0){
-      console.log("normal");
-    }else if(index <= 30.0){
-      console.log("Overweight");
+function checkBMI(weight,height) { 
+    let $BMI = (weight/(height*height)) * 10000;
+
+    if ($BMI < 18.5){
+        return "under weight";
     }
-      return index;
+    if ($BMI < 24.9){
+        return "normal";
     }
-console.log(BMI(170, 65));
+    if ($BMI < 29.9){
+        return "over weight";
+    }
+    if ($BMI < 34.9){
+        return "obese";
+    }
+    return "extremely obese";
+}
+console.log(checkBMI(90,160));
 
 /// Soal - 03
 /// Buatlah sebuah fungsi yang akan merubah huruf pertama disetiap kata menjadi huruf besar

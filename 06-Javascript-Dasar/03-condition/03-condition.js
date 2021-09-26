@@ -10,7 +10,7 @@
 
 const userAge = 18;
 const drivingLicense = true;
-if (userAge < 19) {
+if (userAge < 18) {
     console.log("Anda belum cukup umur");
 } else if (userAge == 18) {
     if (userAge > drivingLicense) {

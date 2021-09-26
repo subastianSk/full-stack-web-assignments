@@ -5,23 +5,20 @@
     <title>Return first and last name from a form</title>
   </head>
   <body>
-    <form id="form1" onsubmit="getFormvalue()">
+    <form id="form1">
       First name: <input type="text" name="fname" value="Marc"><br>
       Last name: <input type="text" name="lname" value="Marquez"><br>
-      <input type="submit" value="Submit">
+      <button type="submit">Simpan</button>
     </form>
     <script>
-    function getFormvalue()
-    {
-    var x=document.getElementById("form1");
-    for (var i=0;i<x.length;i++)
-    {
-    if (x.elements[i].value!='Submit')
-        {  
-        console.log(x.elements[i].value);
-        }  
-    }
-    }
+    let from1 = document.querySelector('#form1')
+    from1.addEventListener('submit',function (event) {
+      event.preventDefault()
+        var first_name = from1.elements['fname']
+        var last_name = from1.elements['lname']
+        console.log(first_name.value);
+        console.log(last_name.value);
+    })
 </script>
   </body>
 </html>

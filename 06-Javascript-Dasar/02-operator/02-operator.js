@@ -6,13 +6,13 @@ const gundam = 750000;
 const makan = 2000000;
 const kost = 1000000;
 const subscription = 250000;
-const totalGaji = gajiPokok + gajiBonus + gajiLembur;
+const pengeluaran = gundam + makan + kost + subscription;
 
 //Gaji
 const gajiPokok = 5000000;
 const gajiBonus = gajiPokok * 0.1;
 const gajiLembur = gajiPokok * 0.05;
-const pengeluaran = gundam + makan + kost + subscription;
+const totalGaji = gajiPokok + gajiBonus + gajiLembur;
 
 /// Sisa Gaji
 const sisaGaji= totalGaji-pengeluaran;

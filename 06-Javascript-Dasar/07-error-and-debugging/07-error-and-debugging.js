@@ -6,12 +6,14 @@
 /// - Syntax Error
 
 /// WRITE YOUR ANALYSIS HERE
-/// - Type Error? The TypeErrorobjek merupakan kesalahan saat operasi tidak dapat dilakukan, 
+/// - The TypeError objek merupakan kesalahan saat operasi tidak dapat dilakukan, 
 /// biasanya (tapi tidak eksklusif) ketika nilai yang bukan dari jenis yang diharapkan.
-/// - Reference Error ? The ReferenceErrorobjek merupakan kesalahan saat variabel tidak ada yang dirujuk.
-/// - Range Error ? The RangeErrorobjek menunjukkan kesalahan ketika nilai yang tidak di set atau berkisar dari nilai yang diperbolehkan.
-/// - Syntax Error ?  yang disebabkan oleh penggunaan yang salah dari pra-didefinisikan sintaks . 
-///   Kesalahan sintaks terdeteksi saat mengkompilasi atau mengurai kode sumber.
+/// - ReferenceErrorobjek merupakan kesalahan saat variabel tidak ada yang dirujuk
+/// - RangeErrorobjek menunjukkan kesalahan ketika nilai yang tidak di set atau berkisar dari nilai yang diperbolehkan.
+/// - Sebuah pengecualian yang disebabkan oleh penggunaan yang salah dari pra-didefinisikan sintaks . 
+///   Kesalahan sintaks terdeteksi saat mengkompilasi atau mengurai kode sumber. Misalnya, 
+///   jika Anda meninggalkan kurung kurawal ( }) saat mendefinisikan fungsi JavaScript , 
+///   Anda memicu kesalahan sintaks. Alat pengembangan browser menampilkan kesalahan sintaks JavaScript dan CSS di konsol.
 
 /// Soal - 02
 /// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah dengan instruksi detail sebagai berikut:
@@ -20,6 +22,12 @@
 /// - apabila terjadi error, jelaskan mengapa hal tersebut bisa terjadi
 
 /// WRITE YOUR ANALYSIS HERE
+/// - yang sallryWithVar undefined dan sedangkan salaryWithConst error
+/// - ReferenceError
+/// - mengapa hal itu terjadi dikarenakan ketika di munculkan ke dalam otput yang terbaca duluan adalah
+///   yang di atas, dikarenakan dikavascript yang diutamakan adalah varibel lokal dulu yang global maka
+///   dibiarkan makanya yang dua error karena blm vatiable salaryWithConst tidak diinisialisasi
+
 console.log(salaryWithVar)
 console.log(salaryWithConst)
 
