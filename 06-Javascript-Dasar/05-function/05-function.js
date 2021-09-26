@@ -10,13 +10,19 @@
 ///   lebih dari Rp 5.000.000, apabila kurang maka ia dibebaskan dari pajak atau bernilai 0
 
 /// EDIT HERE
-function taxCalc(salry) {
-    if (salry <= 5000000) {
-        return salry*100/10;
+function taxCalc(salary) {
+    if(salary <= 5*1e6){
+        return 0;
     }
-    return salry;
+    if(salary <= 1e7){
+        return salary*0.05;
+    }
+    if(salary <= 2*1e7){
+        return salary*0.1;
+    }
+    return salary*0.2;
 }
-console.log((taxCalc(1000)));
+console.log((taxCalc(4500000)));
 
 /// Soal - 02
 /// $BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung $BMI seseorang dengan detail sebagai berikut:
@@ -47,7 +53,7 @@ function checkBMI(weight,height) {
     }
     return "extremely obese";
 }
-console.log(checkBMI(90,160));
+console.log(checkBMI(80,170));
 
 /// Soal - 03
 /// Buatlah sebuah fungsi yang akan merubah huruf pertama disetiap kata menjadi huruf besar
@@ -59,11 +65,20 @@ console.log(checkBMI(90,160));
 /// - (String) kalimat yang sudah kita ubah huruf pertamanya menjadi huruf besar
 
 /// EDIT HERE
-function convToUpperCase(text) {
-    return text.toUpperCase();
+function convToUpperCase(str) {
+    let space = true;
+    for(let i=0; i < str.length; i++){
+        if(space){
+            space = false;
+            str = str.slice(0,i) + str.charAt(i).toUpperCase() + str.slice(i+1);
+        }
+        if(str[i]==" "){
+            space = true;
+        }
+    }
+    return str;
 }
-console.log(convToUpperCase("subastian"));
-
+console.log(convToUpperCase("hello bandung"));
 
 /// Soal - 04
 /// Buatlah sebuah fungsi yang mana nanti akan mengembalikan huruf pertama yang tidak kembar
