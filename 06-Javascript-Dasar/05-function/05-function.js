@@ -25,35 +25,35 @@ function taxCalc(salary) {
 console.log((taxCalc(4500000)));
 
 /// Soal - 02
-/// $BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung $BMI seseorang dengan detail sebagai berikut:
+/// $$BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung $$BMI seseorang dengan detail sebagai berikut:
 
 /// Parameter
 // / - (Number) `height` ⇒ tinggi seseorang (kg)
 // / - (Number) `weight` ⇒ berat badan seseorang (cm) 
 
 // / Return Value
-// / - (Number) hasil kalkulasi menggunakan formula $BMI
+// / - (Number) hasil kalkulasi menggunakan formula $$BMI
 // /   height / weight^2 * 10000
 
 /// EDIT HERE
-function checkBMI(weight,height) { 
-    let $BMI = (weight/(height*height)) * 10000;
+function check$BMI(weight,height) { 
+    $bmi = (weight/(height*height)) * 10000;
 
-    if ($BMI < 18.5){
+    if ($bmi < 18.5){
         return "under weight";
     }
-    if ($BMI < 24.9){
+    if ($bmi < 24.9){
         return "normal";
     }
-    if ($BMI < 29.9){
+    if ($bmi < 29.9){
         return "over weight";
     }
-    if ($BMI < 34.9){
+    if ($bmi < 34.9){
         return "obese";
     }
     return "extremely obese";
 }
-console.log(checkBMI(80,170));
+console.log(check$BMI(80,170));
 
 /// Soal - 03
 /// Buatlah sebuah fungsi yang akan merubah huruf pertama disetiap kata menjadi huruf besar
@@ -92,30 +92,34 @@ console.log(convToUpperCase("hello bandung"));
 /// - jika tidak kita bisa mengembalikan string kosong
 
 /// EDIT HERE
-function firstNonRepeatedChar(str) { 
-    let data = [];
-    if(str.includes(" ")){
-        return "kata tidak boleh dipisah";
+function firstNonRepeatedChar(word) {
+    let huruf;
+
+    for (let index = 0; index < word.length; index++) {
+        huruf = word[index];
+        if(huruf == " "){
+            return "kata tidak boleh dipisah";
+        }
+        
     }
-    for(let i = 0; i<str.length ; i++){
-        if(str[i] == " "){
-            return "kata tidak boleh dipisah";;
+
+    for (let index = 0; index < word.length; index++) {
+        huruf = word[index];
+        let cek = false;
+        for (let j = 0; j < word.length; j++) {
+            if(huruf == word[j] && j != index){
+                cek = true;
+                break;
+            }
         }
-        if(!data[str[i]]){
-            data[str[i]] = 1;
-        }
-        else{
-            data[str[i]]++;
-        }
-    }
-    for(let i = 0; i<str.length; i++){
-        if(data[str[i]]==1){
-            return str[i];
+        if(cek == false){
+            return huruf;
+            break;
         }
     }
     return "";
 }
 
-console.log(firstNonRepeatedChar("alloha"));
 console.log(firstNonRepeatedChar("hello world"));
+console.log(firstNonRepeatedChar("alloha"));
 console.log(firstNonRepeatedChar("wooohoowh"));
