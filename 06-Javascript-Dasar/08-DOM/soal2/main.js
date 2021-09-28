@@ -13,6 +13,20 @@ elBtnComment.addEventListener("click", function() {
   elCommentSection.classList.remove("d-none");
   elBtnComment.classList.add("d-none");
 });
+
+elBtnCancel.addEventListener("click",function(a) {
+  // prevent to re-load the page
+  a.preventDefault();
+ 
+  // toggle section-> button
+  elCommentSection.classList.add("d-none");
+  elBtnComment.classList.remove("d-none");
+
+  // reset value
+  elInputUsername.value = "";
+  elInputComment.value = "";
+  
+});
 elBtnSubmit.addEventListener("click", function(e) {
   // prevent to re-load the page
   e.preventDefault();
@@ -41,4 +55,5 @@ elBtnSubmit.addEventListener("click", function(e) {
   // reset value
   elInputUsername.value = "";
   elInputComment.value = "";
+  
 });
