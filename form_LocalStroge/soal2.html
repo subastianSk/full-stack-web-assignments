@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Subrat Srivastava">
+	<meta name="keywords" content="HTML,CSS,JavaScript,JavaScript cookie">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<title>Subrat Srivastava: Login/Signup</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+  		var mainObj;
+		$(document).ready(function() {
+ 		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+  			var htmlToReplace = '<option></option>';
+ 			if (this.readyState == 4 && this.status == 200) {
+      				var obj = JSON.parse(this.responseText);
+     				mainObj = obj;
+					Object.entries(obj).forEach(([key, value])=> {
+						htmlToReplace = htmlToReplace.concat('<option value=\''+key+'\'>'+value["name"]+'</option>');
+					})
+					document.getElementById("countryName").innerHTML = htmlToReplace;
+    		}
+  		};
+  		xhttp.open("GET", "https://raw.githubusercontent.com/khkwan0/countryCityStateJson/master/lib/compiledCities.json", true);
+  		xhttp.send();
+		});
+
+		
+  		function signupFun(){
+  			var fullName = document.getElementById('fullName').value;
+  			var email = document.getElementById('email').value;
+  			var password = document.getElementById('password').value;
+  			if(fullName != '' && email != '' && password != ''){
+  				document.cookie = "fullName="+fullName;
+  				document.cookie = "email="+email;
+  				document.cookie = "password="+password;
+  				alert("You are good to go");
+  			}else{
+  				alert("All fields are required to proceed");
+  			}
+  		}
+  		var fullName;
+		var email;
+		var password;
+  		function loginFun(){
+  			var allCookies = document.cookie;
+			allCookiesArray = allCookies.split(';');
+			for(var i = 0; i<allCookiesArray.length;i++){
+				var cookiePair = allCookiesArray[i].split("=");
+				if("fullName" == cookiePair[0].trim()) {
+					fullName = cookiePair[1];
+        		}if("email" == cookiePair[0].trim()) {
+					email = cookiePair[1];
+        		}if("password" == cookiePair[0].trim()) {
+					password = cookiePair[1];
+                }
+                }
+			var currentEmail = document.getElementById('loginEmail').value;
+			var currentPass = document.getElementById('loginPass').value;
+			if(currentEmail == '' || currentPass == ''){
+				alert("Email ID and Password are required");
+			}else if(currentEmail == email && currentPass == password){
+				alert("Welcome back");
+			}else{
+				alert("Wrong Email ID Password combination");
+			}
+  		}
+  		function checkPreviousLogin(){
+  			var allCookies = document.cookie;
+			allCookiesArray = allCookies.split(';');
+			for(var i = 0; i<allCookiesArray.length;i++){
+				var cookiePair = allCookiesArray[i].split("=");
+				if("email" == cookiePair[0].trim()) {
+					email = cookiePair[1];
+        		}if("accountCounter" == cookiePair[0].trim()) {
+					accountCounter = cookiePair[1];
+        		}
+			}
+			if(email != '' && accountCounter==1){
+				alert("Already logged in");
+			}
+  		}
+	</script>
+</head>
+<body style="background-image: url('login_bg.jpg');" onload="checkPreviousLogin()"><br />
+	<div  style="width: 55%;float: left;padding-left: 150px;">
+	<fieldset>
+		<legend><h2>Signup</h2></legend>
+	<form>
+		Full Name:<input type="text" name="fullName" id="fullName" required><br /><br />
+		Email:<input type="email" name="email" id="email" required><br /><br />
+		Password:<input type="password" name="password" id="password" required><br /><br />
+<br />
+			<button type="button" onclick="signupFun()">Signup</button><br /><br />
+	</form>
+	</fieldset>
+	</div>
+	<div style="float: right; width: 30%;">
+		<fieldset>
+			<legend><h2>Login</h2></legend>
+		<form>
+			Email: <input type="email" id="loginEmail"><br /><br />
+			Password: <input type="password" id="loginPass"><br /><br />
+			<button type="button" onclick="loginFun()">Login</button><br /><br />
+
+		</form>
+		</fieldset>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+	<div></div>
+</body>
+</html>
