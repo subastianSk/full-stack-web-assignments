@@ -41,6 +41,7 @@
     <script type="module">
       // IMPORT HERE
       import  sayHello, { greeting } from "./06-module-helpers.js";
+      import  validateLoginData from "./06-module-authentication.js";
 
       const elFormGreeting = document.querySelector("#form-greeting");
       const elFormLogin = document.querySelector("#form-login");
@@ -55,6 +56,13 @@
       elFormGreeting.onsubmit = function(e) {
         e.preventDefault();
         greeting(elInputName.value);
+      }
+      elFormLogin.onsubmit = function(e) {
+        e.preventDefault();
+        const email = elInputEmail.value;
+        const password = elInputPassword.value;
+        const alertMsg = validateLoginData(email,password);
+        alert(alertMsg);
       }
     </script>
   </body>
