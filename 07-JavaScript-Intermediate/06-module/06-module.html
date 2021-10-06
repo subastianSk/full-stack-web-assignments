@@ -38,9 +38,9 @@
       <button type="submit">submit</button>
     </form>
 
-    <script>
+    <script type="module">
       // IMPORT HERE
-      from sayHello import "06-module.html";
+      import  sayHello, { greeting } from "./06-module-helpers.js";
 
       const elFormGreeting = document.querySelector("#form-greeting");
       const elFormLogin = document.querySelector("#form-login");
@@ -50,8 +50,12 @@
       const elInputPassword = document.querySelector("#input-password");
 
       // EDIT HERE
-      sayHello;
+      sayHello();
 
+      elFormGreeting.onsubmit = function(e) {
+        e.preventDefault();
+        greeting(elInputName.value);
+      }
     </script>
   </body>
 </html>

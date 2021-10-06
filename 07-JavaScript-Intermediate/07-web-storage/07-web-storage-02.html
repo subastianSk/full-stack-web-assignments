@@ -97,6 +97,25 @@
         elListUser.appendChild(elCol);
       });
 
+      // interval function
+      function loggedInHeader(uname) {
+        elDivUsername.classList.remove("d-none");
+        elFormUsername.classList.add("d-none")
+        elUsername.innerHTML = uname;
+      }
+
+      if(username){
+        loggedInHeader(username);
+      }
+
+      elFormUsername.addEventListener("submit", function(event){
+        event.preventDefault();
+        const usernameFromInput = event.target['username'].value;
+        if (usernameFromInput) {
+          sessionStorage.setItem("username", usernameFromInput);
+          loggedInHeader(usernameFromInput)
+        }
+      })
     </script>
 
     <script

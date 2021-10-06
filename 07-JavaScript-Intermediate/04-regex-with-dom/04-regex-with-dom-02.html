@@ -21,7 +21,7 @@
         const InputPassword = document.querySelector("#password");
         const elBtnSubmit = document.querySelector("#btn-submit");
         const emailValidator = new RegExp(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-        const passwordValidator = new RegExp(/^(?=.?[A-Z])(?=.?[a-z])(?=.?[0-9])(?=.?[#?!@$%^&*-]).{8,}$/);
+        const passwordValidator = new RegExp(/[A-Za-z\d\!\@\#\$\%\^\&\*]{8,}/);
         elBtnSubmit.addEventListener("click", function(e) {
             e.preventDefault();
             if (emailValidator.test(InputEmail.value)) {
