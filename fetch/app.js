@@ -9,10 +9,10 @@ async function getData() {
 }
 
 async function renderUsers() {
-    let users = await getData();
-    console.log(users);
+    let respond = await getData();
+    console.log(respond);
     let html = '';
-    users.results.forEach(user => {
+    respond.results.forEach(user => {
         let htmlSegment = `<div class="user">
                             <img src="${user.picture.large}" >
                             <h2>${user.name.first} ${user.name.last}</h2> 
