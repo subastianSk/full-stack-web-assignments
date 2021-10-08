@@ -3,7 +3,7 @@ export default function validateLoginData(email,password) {
         const passwordValidator = new RegExp(/[A-Za-z\d\!\@\#\$\%\^\&\*]{8,}/);
         if (emailValidator.test(email)) {
             if (passwordValidator.test(password)) {
-                return `Welcome to The Jungle ${email}`
+                return `Welcome to The Jungle`
             } else {
                 return `tolong masukan password sesuai ketentuan`
             }
