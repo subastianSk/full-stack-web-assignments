@@ -9,6 +9,8 @@
 // first log:  5
 // second log:  6
 // second log:  6
+// second log:  6
+// second log:  6
 // 5. Apabila terdapat ketidak samaan antara console.log pertama dan kedua, bisakah kalian memberikan penjelasan mengapa hal tersebut bisa terjadi
 //jika waktu sudah melebihi 100 seconds maka dari first log akan berpindah ke second log
 //menampilkan angka perulangan sampai 6

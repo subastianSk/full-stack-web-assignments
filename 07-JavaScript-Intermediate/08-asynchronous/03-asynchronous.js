@@ -1,11 +1,18 @@
+// import fetch from 'node-fetch';
 const getGitHubUser = async(username) => {
-    const url = 'https://api.github.com/users/' + username;
     try {
-        let res = await fetch(url);
-        return await res.json();
+        if (!username) {
+            return null;
+        }
+        const url = await fetch(`https://api.github.com/users/${username}`);
+        let res = await url.json();
+        if (res?.login) {
+            return res;
+        }
     } catch (error) {
         console.log(error);
     }
+    return "Not Found"
 }
 
 const printGitHubUser = async() => {
