@@ -59,3 +59,7 @@ export function drawUserCard(
     });
   }
 }
+
+export function refreshPage(){
+window.document.querySelector("#form-username").reload();
+} 

@@ -66,48 +66,16 @@
       let username = sessionStorage.getItem("username");
       let profile = localStorage.getItem(username); // "[{id:2,login:'foo'},{id:3,login:'wycats'}]"
 
+      let numberOfFollowings = 0;
+
       // initialize card
       drawUserCard(elListUser, githubUsers, username, profile);
-
       // check if username exist in session storage
       if (username) {
         loggedInHandler(username, elDivUsername, elFormUsername, elUsername);
       }
-
-      // event handler when follow/unfollow button clicked
-      let elFollowButtons = document.querySelectorAll(".follow-button");
-      for (let i = 0; i < elFollowButtons.length; i++) {
-        const followButton = elFollowButtons[i];
-        followButton.addEventListener("click", function() {
-          const userId = this.getAttribute("data-id");
-          const followings = JSON.parse(profile) || [];
-          const userTarget = followings.find((u) => u.id === Number(userId));
-          const userDataFromDb = githubUsers.find((u) => u.id === Number(userId));
-          if (!userTarget) {
-            // when user not follow yet, FOLLOW
-            const dataToBePush = [userDataFromDb, ...followings];
-            localStorage.setItem(username, JSON.stringify(dataToBePush));
-            profile = JSON.stringify(dataToBePush);
-            // DOM
-            this.classList.add("btn", "btn-success", "w-100");
-            this.setAttribute("type", "button");
-            this.innerHTML = "Unfollow";
-            // mutate badge ++ followings.length
-          } else {
-            // when user already follow, UNFOLLOW
-            const withoutUser = followings.filter((u) => u.id !== Number(userId))
-            const dataToBePush = withoutUser;
-            localStorage.setItem(username, JSON.stringify(dataToBePush));
-            profile = JSON.stringify(dataToBePush);
-            // DOM
-            this.classList.remove("btn-success");
-            this.classList.add("btn", "btn-primary", "w-100");
-            this.setAttribute("type", "button");
-            this.innerHTML = "Follow";
-            // mutate badge -- followings.length
-          }
-        });
-      }
+      // add event listerner click to button if it exist
+      registerEventClickToEachButton();
 
       // event handler when submit button clicked / login button clicked
       elFormUsername.addEventListener("submit", function(event) {
@@ -123,8 +91,54 @@
           loggedInHandler(usernameFromInput, elDivUsername, elFormUsername, elUsername);
           // create cards element for each users
           drawUserCard(elListUser, githubUsers, username, profile);
+          registerEventClickToEachButton();
         }
       });
+
+      function registerEventClickToEachButton() {
+        // event handler when follow/unfollow button clicked
+        let elFollowButtons = document.querySelectorAll(".follow-button");
+        for (let i = 0; i < elFollowButtons.length; i++) {
+          const followButton = elFollowButtons[i];
+          followButton.addEventListener("click", function() {
+            const userId = this.getAttribute("data-id");
+            const followings = JSON.parse(profile) || [];
+            const userTarget = followings.find((u) => u.id === Number(userId));
+            const userDataFromDb = githubUsers.find((u) => u.id === Number(userId));
+            if (!userTarget) {
+              // when user not follow yet, FOLLOW
+              const dataToBePush = [userDataFromDb, ...followings];
+              localStorage.setItem(username, JSON.stringify(dataToBePush));
+              profile = JSON.stringify(dataToBePush);
+              // DOM
+              this.classList.add("btn", "btn-success", "w-100");
+              this.setAttribute("type", "button");
+              this.innerHTML = "Unfollow";
+              // mutate badge ++ followings.length
+              numberOfFollowings = dataToBePush.length
+            } else {
+              // when user already follow, UNFOLLOW
+              const withoutUser = followings.filter((u) => u.id !== Number(userId))
+              const dataToBePush = withoutUser;
+              localStorage.setItem(username, JSON.stringify(dataToBePush));
+              profile = JSON.stringify(dataToBePush);
+              // DOM
+              this.classList.remove("btn-success");
+              this.classList.add("btn", "btn-primary", "w-100");
+              this.setAttribute("type", "button");
+              this.innerHTML = "Follow";
+              // mutate badge -- followings.length
+              numberOfFollowings = withoutUser.length;
+            }
+            if (numberOfFollowings > 0) {
+              elBadgeUser.classList.remove("d-none");
+            } else {
+              elBadgeUser.classList.add("d-none");
+            }
+            elBadgeUser.innerHTML = numberOfFollowings;
+          });
+        }
+      }
 
     </script>
 
@@ -136,4 +150,3 @@
 
   </body>
 </html>
-
