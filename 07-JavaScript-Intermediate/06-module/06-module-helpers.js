@@ -3,6 +3,7 @@ export default function sayHello() {
 }
 
 export function greeting(name) {
-  alert(`Hello, ${name}`)
+  const message = `Hello, ${name}`;
+  alert(message)
 }
   
