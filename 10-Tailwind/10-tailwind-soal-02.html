@@ -10,9 +10,23 @@
       rel="stylesheet"
     />
   </head>
-  <body class="max-w-7xl m-auto">
+  <!-- 01 Body -->
+
+  <body class="max-w-7xl mx-auto">
     <div
-      class="bg-white filter drop-shadow-md max-w-7xl mx-auto flex justify-between items-center px-8 py-4 md:pr-16 md:pl-10 md:py-3">
+      class="
+        bg-white
+        mx-auto
+        flex
+        justify-between
+        items-center
+        px-8
+        py-4
+        md:pr-16 md:pl-10 md:py-3
+        filter
+        drop-shadow-md
+      "
+    >
       <h1 class="text-2xl font-semibold tracking-wide">SKILVUL</h1>
       <div class="relative w-10 h-10 rounded-full block">
         <img
@@ -27,60 +41,120 @@
         ></div>
       </div>
     </div>
-    <div class="min-h-screen max-w-7xl mx-auto bg-gray-100 grid grid-cols-12">
-        <!-- sidebar -->
-      <ol class="col-span-3 bg-white block tracking-wider hidden sm:block">
+
+    <div class="min-h-screen mx-auto bg-gray-100 grid grid-cols-12">
+      <!-- 02 Sidebar
+         Mobile First untuk menerapkan Responsive Web menggunakan Tailwind-->
+      <ol class="col-span-3 bg-white hidden lg:block">
         <li
-          class="font-medium uppercase border-l-8 border-red-500 py-2 px-5 text-red-500 hover:bg-red-200 cursor-pointer "
+          class="
+            font-medium
+            uppercase
+            px-3
+            py-2
+            border-l-8 border-red-500
+            text-red-500
+            cursor-pointer
+            tracking-wide
+          "
         >
           home
         </li>
         <li
-          class="font-medium uppercase py-2 px-5  hover:bg-red-200 cursor-pointer"
+          class="font-medium uppercase px-5 py-2 cursor-pointer tracking-normal"
         >
           product
         </li>
         <li
-          class="font-medium uppercase py-2 px-5  hover:bg-red-200 cursor-pointer"
+          class="font-medium uppercase px-5 py-2 cursor-pointer tracking-normal"
         >
           tag
         </li>
         <li
-          class="font-medium uppercase py-2 px-5  hover:bg-red-200 cursor-pointer"
+          class="font-medium uppercase px-5 py-2 cursor-pointer tracking-normal"
         >
           supplier
         </li>
         <li
-          class="font-medium uppercase py-2 px-5  hover:bg-red-200 cursor-pointer"
+          class="font-medium uppercase px-5 py-2 cursor-pointer tracking-normal"
         >
           category
         </li>
       </ol>
-      <!-- Content -->
-      <div id="content" class="bg-red-100 p-8 md:px-16 md:py-8 sm:col-span-9 col-span-12 ">
-        <div id="summary-card" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+
+      <!-- 03 Content -->
+      <div
+        id="content"
+        class="col-span-12 lg:col-span-9 bg-red-100 p-8 md:px-16 md:py-8"
+      >
+        <div
+          id="summary-card"
+          class="
+            grid grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-4
+            gap-4
+            font-medium
+          "
+        >
           <div
-            class="bg-white h-28 w-full p-5 rounded filter drop-shadow-md"
+            class="
+              bg-white
+              h-28
+              w-full
+              p-5
+              rounded
+              shadow
+              filter
+              drop-shadow-md
+            "
           >
-            <h1 class="text-4xl order-last">2000</h1>
+            <h1 class="text-4xl">2000</h1>
             <p class="text-lg font-light capitalize">product</p>
           </div>
           <div
-            class="bg-white h-28 w-full p-5 rounded filter drop-shadow-md"
+            class="
+              bg-white
+              h-28
+              w-full
+              p-5
+              rounded
+              shadow
+              filter
+              drop-shadow-md
+            "
           >
-            <h1 class="text-4xl order-last">47</h1>
+            <h1 class="text-4xl">47</h1>
             <p class="text-lg font-light capitalize">tag</p>
           </div>
           <div
-            class="bg-white h-28 w-full p-5 rounded filter drop-shadow-md"
+            class="
+              bg-white
+              h-28
+              w-full
+              p-5
+              rounded
+              shadow
+              filter
+              drop-shadow-md
+            "
           >
             <h1 class="text-4xl">260</h1>
             <p class="text-lg font-light capitalize">supplier</p>
           </div>
           <div
-            class="bg-white h-28 w-full p-5 rounded filter drop-shadow-md"
+            class="
+              bg-white
+              h-28
+              w-full
+              p-5
+              rounded
+              shadow
+              filter
+              drop-shadow-md
+            "
           >
-            <h1 class="text-4xl order-last">150</h1>
+            <h1 class="text-4xl">150</h1>
             <p class="text-lg font-light capitalize">category</p>
           </div>
         </div>
@@ -88,7 +162,15 @@
           <table class="w-full whitespace-no-wrap">
             <thead>
               <tr
-                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50"
+                class="
+                  text-xs
+                  font-semibold
+                  tracking-wide
+                  text-left text-gray-500
+                  uppercase
+                  border-b
+                  bg-gray-50
+                "
               >
                 <th class="px-4 py-3">Client</th>
                 <th class="px-4 py-3">Amount</th>
@@ -102,7 +184,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -124,7 +206,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 12.800.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-green-700
+                      bg-green-100
+                      rounded-full
+                    "
                   >
                     Approved
                   </span>
@@ -137,7 +227,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -159,7 +249,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 12.300.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-yellow-600 bg-yellow-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-yellow-600
+                      bg-yellow-100
+                      rounded-full
+                    "
                   >
                     Pending
                   </span>
@@ -172,7 +270,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -194,7 +292,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 8.600.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-red-700
+                      bg-red-100
+                      rounded-full
+                    "
                   >
                     Denied
                   </span>
@@ -207,7 +313,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -229,7 +335,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 10.200.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-green-700
+                      bg-green-100
+                      rounded-full
+                    "
                   >
                     Approved
                   </span>
@@ -242,7 +356,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -264,7 +378,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 13.600.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-gray-700
+                      bg-gray-100
+                      rounded-full
+                    "
                   >
                     Expired
                   </span>
@@ -277,7 +399,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -299,7 +421,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 8.200.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-green-700
+                      bg-green-100
+                      rounded-full
+                    "
                   >
                     Approved
                   </span>
@@ -312,7 +442,7 @@
                   <div class="flex items-center text-sm">
                     <!-- Avatar with inset shadow -->
                     <div
-                      class="relative w-8 h-8 mr-3 rounded-full hidden sm:block"
+                      class="relative w-8 h-8 mr-3 rounded-full hidden md:block"
                     >
                       <img
                         class="object-cover w-full h-full rounded-full"
@@ -334,7 +464,15 @@
                 <td class="px-4 py-3 text-sm">Rp. 7.800.000</td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full"
+                    class="
+                      px-2
+                      py-1
+                      font-semibold
+                      leading-tight
+                      text-green-700
+                      bg-green-100
+                      rounded-full
+                    "
                   >
                     Approved
                   </span>
