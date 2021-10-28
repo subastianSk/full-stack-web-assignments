@@ -10,6 +10,9 @@ export default function App() {
   const [purchasedItem, setPurchasedItem] = useState(0);
   const [cart, setCart] = useState([]);
 
+  // cart = "value" X
+  // setCart("value") V
+
   useEffect(() => {
     setPurchasedItem(cart.reduce((acc, curr) => curr.amount + acc, 0));
     setTotal(cart.reduce((acc, curr) => curr.amount * curr.price + acc, 0));
@@ -35,21 +38,27 @@ export default function App() {
   };
 
   const decreaseCartAmount = (id) => {
-    const cartById = cart.find((o) => o.id === id);
-    cartById.amount = cartById.amount - 1;
-    const cartWithoutActiveId = cart.filter((o) => o.id !== id);
-    if (cartById.amount <= 0) {
-      setCart(cartWithoutActiveId);
+    // const cartById = cart.find((o) => o.id === id);
+    const indexOfCartById = cart.findIndex((o) => o.id === id);
+    const newCart = cart.slice();
+    // cartById.amount = cartById.amount - 1;
+    newCart[indexOfCartById].amount = newCart[indexOfCartById].amount - 1;
+    if (newCart[indexOfCartById].amount <= 0) {
+      setCart(cart.filter((o) => o.id !== id));
     } else {
-      setCart([...cartWithoutActiveId, cartById]);
+      setCart(newCart);
     }
   };
 
   const increaseCartAmount = (id) => {
-    const cartById = cart.find((o) => o.id === id);
-    cartById.amount = cartById.amount + 1;
-    const cartWithoutActiveId = cart.filter((o) => o.id !== id);
-    setCart([...cartWithoutActiveId, cartById]);
+    // const cartById = cart.find((o) => o.id === id);
+    const indexOfCartById = cart.findIndex((o) => o.id === id);
+    const newCart = cart.slice();
+    newCart[indexOfCartById].amount = newCart[indexOfCartById].amount + 1;
+    // cartById.amount = cartById.amount + 1;
+    // const cartWithoutActiveId = cart.filter((o) => o.id !== id);
+    // setCart([...cartWithoutActiveId, cartById]);
+    setCart(newCart);
   };
 
   return (
