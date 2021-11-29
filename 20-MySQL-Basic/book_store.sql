@@ -23,6 +23,11 @@ SHOW tables;
 -- Detail Table --
 desc books;
 
+--- Add Cloum --
+ALTER TABLE books
+ADD price int DEFAULT 0,
+status ENUM ('available', 'out of stock', 'limited');
+
 -- Alter Table --
 ALTER TABLE `books` DROP `place_sell`;
 
