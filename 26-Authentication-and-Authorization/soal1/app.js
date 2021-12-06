@@ -25,7 +25,6 @@ app.use(express.urlencoded({
 }));
 
 
-app.use(express.static(__dirname));
 
 
 app.use(cookieParser());
@@ -36,6 +35,9 @@ const mypassword = 'mypassword'
 
 
 var session;
+
+// app.use(express.static('views'))
+app.use("/static", express.static(__dirname + "/views"))
 
 app.get('/', (req, res) => {
     session = req.session;
