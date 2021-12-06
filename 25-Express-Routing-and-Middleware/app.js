@@ -31,6 +31,11 @@ const hewan = [{
     },
 ]
 
+app.use(function (req, res, next) {
+    console.log('this is logger');
+    next();
+})
+
 app.get("/hewan", (req, res) => {
     res.send(hewan);
 });
@@ -63,5 +68,5 @@ app.post("/hewan", (req, res) => {
 
 
 app.listen(port, () => {
-    console.log("server is listening on port ", port);
+    console.log("server run");
 });
