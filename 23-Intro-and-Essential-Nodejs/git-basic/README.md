@@ -54,6 +54,23 @@ Sejatinya javascript merupakan bahasa pemrograman yang digunakan di front end si
 Tetapi dengan menggunakan NodeJS kita dapat menjalankan javascript di server side menggunakan terminal command line menggunakan perintah “node”.
 
 ![](https://lh3.googleusercontent.com/I1qiINUISWafvAjKIQ-Q5zC8BMMV_TbIlZ2B0QHzp2CmlvsrAxZazsTfFMXXAhA8jf-OksVoaDjRi-gG5HTtyGHvrL9Mgrtp9tU21YAeRc67FMPG6dZtAzS1k9xsM5Li2EIEvnz3-JU)
+
+
 3.Built-in Module adalah dimana sudah bawaan dari node js
 External Module adalah diaman module nya itu mengambil dari luar yang tidak ada di node js
 Custom Module adalah dimana kita bisa mengubah module sesuai kita inginkan
+
+4.Contoh Modules Node JS:
+
+a. Built in Module: https,fs,url,path
+
+b. External Module: Sequelize,nodemon,express
+
+c. Custom Module: 
+// message.js
+module.exports = 'Hello world';
+
+// app.js
+const msg = require('./Messages.js');
+
+console.log(msg);
