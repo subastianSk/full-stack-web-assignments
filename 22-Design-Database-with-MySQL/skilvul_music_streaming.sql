@@ -149,7 +149,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `name`, `email`, `password`) VALUES
-(1, 'Devi', 'devialestari@gmail.com', 'devi123');
+(1, 'Devy', 'devymanurung@gmail.com', 'devy123'),(2, 'Dwi', 'dwi@gmail.com', 'dewi123');
 
 --
 -- Indexes for dumped tables

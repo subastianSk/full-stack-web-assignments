@@ -22,5 +22,5 @@ var server = http.createServer(function (req, res) {
 });
 
 // menjalankan objek server yang telah diciptakan
-server.listen(2020);
-console.log('Server is running on port 2020');
+server.listen(8000);
+console.log('Server is running on port 8000');
