@@ -29,4 +29,7 @@ Pada arsitektur REST, REST server menyediakan  _resources_ (sumber daya/data) da
 
 5. 
 ![Screenshot 2021-12-06 070838](https://user-images.githubusercontent.com/63898506/144843822-66c6c991-4167-4f5a-b3ee-4723c482b94a.png)
+
+6. Apa fungsi dari Response Codes?
+Response codes berfungsi untuk menunjukkan pada client informasi apakah operasi dari request yang diberikan berhasil diproses atau tidak
  
