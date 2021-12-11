@@ -29,4 +29,4 @@
 ![hasilDelete](https://user-images.githubusercontent.com/63898506/145489831-93cc149a-2370-4dd6-9491-67b2c23c5d32.png)
 
 
-DOCUMENTATION Link Docs:https://documenter.getpostman.com/view/12800385/UVJkCtiz
+[DOCUMENTATION Link Documentasi](https://documenter.getpostman.com/view/12800385/UVJkCtiz)
