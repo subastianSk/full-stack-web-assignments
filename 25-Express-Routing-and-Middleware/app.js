@@ -82,27 +82,6 @@ app.post("/hewan", (req, res, next) => {
     res.send(newHewan);
 });
 
-
-app.post("/hewan", (req, res, next) => {
-    const allowedSpesies = ["kucing", "anjing", "kelinci"]
-    if (!allowedSpesies.includes(req.body.spesies)) {
-        res.status(400).send({
-            error: "Spesies not valid"
-        });
-        return;
-    }
-    next();
-}, (req, res) => {
-    const newHewan = {
-        id: hewan.length + 1,
-        nama: req.body.nama,
-        spesies: req.body.spesies
-    };
-
-    hewan.push(newHewan);
-    res.send(newHewan);
-});
-
 app.put("/hewan/:id", (req, res, next) => {
     const hewanid = Number(req.params.id)
     const getHewan = hewan.find((hewan) => hewan.id === hewanid)
@@ -113,12 +92,19 @@ app.put("/hewan/:id", (req, res, next) => {
     }
     next();
 }, (req, res) => {
-    const currHewan = Number(req.params.id)
+    const hewanid = Number(req.params.id)
+    const getHewan = hewan.find((hewan) => hewan.id === hewanid)
 
-    hewan.splice((currHewan - 1), 1)
+    const getIndex = hewan.findIndex(function (pet) {
+        return pet.id === getHewan.id
+    })
+
+    if (getIndex !== -1) {
+        hewan.splice(getIndex, 1)
+    }
 
     const updatedHewan = {
-        id: req.params.id,
+        id: Number(req.params.id),
         nama: req.body.nama,
         spesies: req.body.spesies
     };
@@ -137,10 +123,16 @@ app.delete("/hewan/:id", (req, res, next) => {
     }
     next();
 }, (req, res) => {
-    const currHewan = Number(req.params.id)
+    const hewanid = Number(req.params.id)
+    const getHewan = hewan.find((hewan) => hewan.id === hewanid)
 
-    hewan.splice((currHewan - 1), 1)
+    const getIndex = hewan.findIndex(function (pet) {
+        return pet.id === getHewan.id
+    })
 
+    if (getIndex !== -1) {
+        hewan.splice(getIndex, 1)
+    }
     res.status(200).send("Hewan deleted")
 })
 
