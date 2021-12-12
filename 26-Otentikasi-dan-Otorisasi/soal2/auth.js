@@ -38,7 +38,11 @@ const authenticateJWT = (req, res, next) => {
 
 
 function MustLoggedinMiddleware(req, res, next) {
+<<<<<<< HEAD:26-Authentication-and-Authorization/soal2/auth.js
     if (req.authenticateJWT()) {
+=======
+    if (req.authHeader()) {
+>>>>>>> 1d8fa6599f092cc0b869efb6631d27a1bf7b0f4d:26-Otentikasi-dan-Otorisasi/soal2/auth.js
         return next();
     }
 
