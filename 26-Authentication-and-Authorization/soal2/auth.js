@@ -38,7 +38,7 @@ const authenticateJWT = (req, res, next) => {
 
 
 function MustLoggedinMiddleware(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.authenticateJWT()) {
         return next();
     }
 
