@@ -1,4 +1,5 @@
-const MustLoginMW = auth.MustLoggedinMiddleware;
+const auth = require("./auth"),
+    MustLoginMW = auth.MustLoggedinMiddleware;
 
 const books = [{
         "author": "Robert Martin",
