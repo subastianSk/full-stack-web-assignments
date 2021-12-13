@@ -2,7 +2,7 @@
 const express = require("express");
 const Sequelize = require("sequelize");
 
-// Call module and setting Port
+// Create Port
 const app = express();
 const PORT = 3000;
 
@@ -12,7 +12,13 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-// connect to database and server
+// connect to database online
+// const sequlize = new Sequelize("sql6457557", "sql6457557", "DiTL4U4rk6", {
+//     host: "sql6.freemysqlhosting.net",
+//     dialect: "mysql",
+// });
+
+// connect to database localhost
 const sequlize = new Sequelize("animals", "root", "", {
     host: "localhost",
     dialect: "mysql",
@@ -53,7 +59,7 @@ app.get("/", (req, res) => {
     res.send("server");
 });
 
-// Get all hewan from table
+// Get all hewan from database
 app.get("/hewan", (req, res) => {
     Hewan.findAll()
         .then((result) => {
