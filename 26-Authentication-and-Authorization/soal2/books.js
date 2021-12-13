@@ -32,15 +32,19 @@ app.get("/books", MustLoginMW, (req, res) => {
 });
 
 app.post("/books", MustLoginMW, (req, res) => {
-    const newBooks = {
-        author: 'Kyle Simpson',
-        country: 'USA',
-        language: 'English',
-        pages: 226,
-        title: "You don't know JS",
-        year: 2014
-    };
 
-    books.push(newBooks);
-    res.send(newBooks);
+    const {
+        role
+    } = req.user;
+
+    if (role !== "admin") {
+        return res.status(403).send({
+            message: "you are not admin"
+        });
+    }
+
+    const book = req.body;
+    books.push(book);
+
+    res.send("Book added successfully");
 });
