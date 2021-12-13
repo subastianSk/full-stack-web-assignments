@@ -60,11 +60,11 @@ app.get('/hewan/:id', (req, res) => {
 })
 
 app.post("/hewan", (req, res, next) => {
-    const allowedSpesies = ["kucing", "anjing", "kelinci"]
+    const postChecker = ["kucing", "anjing", "kelinci"]
     const {
         spesies
     } = req.body;
-    if (!allowedSpesies.includes(spesies)) {
+    if (!postChecker.includes(spesies)) {
         res.status(400).send({
             error: "Spesies not valid"
         });
