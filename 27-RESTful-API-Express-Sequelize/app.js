@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 // });
 
 // connect to database localhost
-const sequlize = new Sequelize("animals", "root", "", {
+const sequlize = new Sequelize("id17508555_animals", "id17508555_subastian", "zu?5Kj6wUVtbL9sr", {
     host: "localhost",
     dialect: "mysql",
 });
