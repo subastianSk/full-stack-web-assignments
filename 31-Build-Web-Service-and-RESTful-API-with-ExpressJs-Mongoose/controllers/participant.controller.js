@@ -32,12 +32,14 @@ class ParticipantController {
             const {
                 name,
                 dateOfBirth,
-                location
+                location,
+                courses
             } = req.body;
             const data = new ParticipantModel({
                 name: name,
                 dateOfBirth: dateOfBirth,
                 location: location,
+                courses:courses
             });
 
             const saved = await data.save();
@@ -70,7 +72,8 @@ class ParticipantController {
             const {
                 name,
                 dateOfBirth,
-                location
+                location,
+                courses
             } = req.body;
             const id = req.params.id;
             const data = await ParticipantModel.findOneAndUpdate({
