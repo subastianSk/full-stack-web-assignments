@@ -32,6 +32,9 @@ const hewan = [{
 ]
 app.use(express.json());
 
+// jangan lupa tambahin ini
+// app.use(express.json());
+
 app.use(function (req, res, next) {
     console.log('this is logger');
     next();
@@ -60,14 +63,6 @@ app.get('/hewan/:id', (req, res) => {
 })
 
 app.post("/hewan", (req, res, next) => {
-    const postChecker = ["kucing", "anjing", "kelinci"]
-    const {
-        spesies
-    } = req.body;
-    if (!postChecker.includes(spesies)) {
-        res.status(400).send({
-            error: "Spesies not valid"
-        });
         return;
     }
     next();
