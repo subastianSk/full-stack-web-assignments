@@ -9,6 +9,7 @@
 1. mkdir Bastian	
 2. cd Bastian	
 ```	
+```<p>```
 
 ### Penyelesaian	
 menggunakan mkdir untuk membuat sebuah folder ```mkdir Batian ```	
